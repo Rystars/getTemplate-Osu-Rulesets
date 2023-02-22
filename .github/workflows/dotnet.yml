@@ -5,12 +5,16 @@ name: OsuRulesetsTemplate
 
 on: workflow_dispatch
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build:
-
+    
+    name: EmptyFreefrom
     runs-on: ubuntu-latest
-
-    EmptyFreeform:
+    step:
     - uses: actions/checkout@v3
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
@@ -25,8 +29,10 @@ jobs:
       with:
           name: EmptyFreefrom
           path: MyProject/Ruleset
-
-    EmptyScrolling:
+    
+    name: EmptyScrolling
+    runs-on: ubuntu-latest
+    step:
     - uses: actions/checkout@v3
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
@@ -42,7 +48,9 @@ jobs:
           name: EmptyScrolling
           path: MyProject/Ruleset
 
-    ExampleFreeform:
+    name: ExampleFreefrom
+    runs-on: ubuntu-latest
+    step:
     - uses: actions/checkout@v3
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
@@ -58,7 +66,9 @@ jobs:
           name: ExampleFreeform
           path: MyProject/Ruleset
 
-    ExampleScrolling:
+    name: ExampleScrolling
+    runs-on: ubuntu-latest
+    step:
     - uses: actions/checkout@v3
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
