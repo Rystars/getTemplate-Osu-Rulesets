@@ -21,6 +21,6 @@ jobs:
       with:
         dotnet-version: 6.0.x
     - name: Restore dependencies
-      run: dotnet new -i ppy.osu.Game.Templates
+      run: dotnet new ruleset -n MyCoolRuleset
     - name: upload projects
       uses:  actions/upload-artifact@v3
