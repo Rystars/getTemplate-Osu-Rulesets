@@ -22,7 +22,7 @@ jobs:
         dotnet-version: 6.0.x
     - name: install template
       run: dotnet new -i ppy.osu.Game.Templates
-    - name getRulesets
+    - name: getRulesets
       run: dotnet new ruleset -n MyCoolRuleset
     - name: upload projects
       uses:  actions/upload-artifact@v3
