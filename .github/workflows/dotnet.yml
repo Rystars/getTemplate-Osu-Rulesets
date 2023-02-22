@@ -1,7 +1,7 @@
 # This workflow will build a .NET project
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
 
-name: .NET
+name: OsuRulesetsTemplate
 
 on: workflow_dispatch
 
@@ -10,7 +10,7 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    steps:
+    EmptyFreeform:
     - uses: actions/checkout@v3
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
@@ -23,5 +23,53 @@ jobs:
     - name: upload projects
       uses:  actions/upload-artifact@v3
       with:
-          name: OsuRulesetsTemplate
+          name: EmptyFreefrom
+          path: MyProject/Ruleset
+
+    EmptyScrolling:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 6.0.x
+    - name: install template
+      run: dotnet new -i ppy.osu.Game.Templates
+    - name: get Empty Rulesets
+      run: dotnet new ruleset-scrolling -n MyCoolRuleset
+    - name: upload projects
+      uses:  actions/upload-artifact@v3
+      with:
+          name: EmptyScrolling
+          path: MyProject/Ruleset
+
+    ExampleFreeform:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 6.0.x
+    - name: install template
+      run: dotnet new -i ppy.osu.Game.Templates
+    - name: get Empty Rulesets
+      run: dotnet new ruleset-example -n MyCoolWorkingRuleset
+    - name: upload projects
+      uses:  actions/upload-artifact@v3
+      with:
+          name: ExampleFreeform
+          path: MyProject/Ruleset
+
+    ExampleScrolling:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 6.0.x
+    - name: install template
+      run: dotnet new -i ppy.osu.Game.Templates
+    - name: get Empty Rulesets
+      run: dotnet new ruleset-scrolling-example -n MyCoolWorkingRuleset
+    - name: upload projects
+      uses:  actions/upload-artifact@v3
+      with:
+          name: ExampleScrolling
           path: MyProject/Ruleset
