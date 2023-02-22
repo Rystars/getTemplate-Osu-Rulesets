@@ -26,3 +26,6 @@ jobs:
       run: dotnet new ruleset -n MyCoolRuleset
     - name: upload projects
       uses:  actions/upload-artifact@v3
+      with:
+          name: OsuRulesetsTemplate
+          path: 
