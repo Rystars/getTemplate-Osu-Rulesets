@@ -10,8 +10,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
-    
+  EmptyFreeform:  
     name: EmptyFreefrom
     runs-on: ubuntu-latest
     step:
@@ -30,6 +29,7 @@ jobs:
           name: EmptyFreefrom
           path: MyProject/Ruleset
     
+  EmptyScrolling:
     name: EmptyScrolling
     runs-on: ubuntu-latest
     step:
@@ -48,6 +48,7 @@ jobs:
           name: EmptyScrolling
           path: MyProject/Ruleset
 
+  ExampleFreefrom:
     name: ExampleFreefrom
     runs-on: ubuntu-latest
     step:
@@ -66,6 +67,7 @@ jobs:
           name: ExampleFreeform
           path: MyProject/Ruleset
 
+  ExampleScrolling:
     name: ExampleScrolling
     runs-on: ubuntu-latest
     step:
