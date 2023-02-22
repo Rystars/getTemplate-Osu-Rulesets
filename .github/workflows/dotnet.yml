@@ -28,4 +28,4 @@ jobs:
       uses:  actions/upload-artifact@v3
       with:
           name: OsuRulesetsTemplate
-          path: /usr/bin/bash
+          path: MyProject/Ruleset
