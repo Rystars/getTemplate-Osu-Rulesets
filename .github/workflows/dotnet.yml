@@ -22,3 +22,5 @@ jobs:
         dotnet-version: 6.0.x
     - name: Restore dependencies
       run: dotnet new -i ppy.osu.Game.Templates
+    - name: upload projects
+      uses:  actions/upload-artifact@v3
