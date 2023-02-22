@@ -23,7 +23,7 @@ jobs:
     - name: install template
       run: dotnet new -i ppy.osu.Game.Templates
     - name: getRulesets
-      run: dotnet new ruleset -n MyCoolRuleset
+      run: dotnet new ruleset -n MyCoolRuleset -o MyProject/Ruleset
     - name: upload projects
       uses:  actions/upload-artifact@v3
       with:
