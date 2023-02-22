@@ -41,7 +41,7 @@ jobs:
     - name: install template
       run: dotnet new -i ppy.osu.Game.Templates
     - name: get Empty Rulesets
-      run: dotnet new ruleset-scrolling -n MyCoolRuleset
+      run: dotnet new ruleset-scrolling -n MyCoolRuleset -o MyProject/Ruleset
     - name: upload projects
       uses:  actions/upload-artifact@v3
       with:
@@ -60,7 +60,7 @@ jobs:
     - name: install template
       run: dotnet new -i ppy.osu.Game.Templates
     - name: get Empty Rulesets
-      run: dotnet new ruleset-example -n MyCoolWorkingRuleset
+      run: dotnet new ruleset-example -n MyCoolWorkingRuleset -o MyProject/Ruleset
     - name: upload projects
       uses:  actions/upload-artifact@v3
       with:
@@ -79,7 +79,7 @@ jobs:
     - name: install template
       run: dotnet new -i ppy.osu.Game.Templates
     - name: get Empty Rulesets
-      run: dotnet new ruleset-scrolling-example -n MyCoolWorkingRuleset
+      run: dotnet new ruleset-scrolling-example -n MyCoolWorkingRuleset -o MyProject/Ruleset
     - name: upload projects
       uses:  actions/upload-artifact@v3
       with:
