@@ -26,7 +26,7 @@ jobs:
     - name: upload projects
       uses:  actions/upload-artifact@v3
       with:
-          name: EmptyFreefrom
+          name: EmptyFreeform
           path: MyProject/Ruleset
     
   EmptyScrolling:
